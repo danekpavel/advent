@@ -18,7 +18,7 @@ star_nums = {i * n + j: []
 
 
 def update_star_nums(num: int, start: int, end: int, line_i: int) -> None:
-    # Adds the part number to all the stars to which it is adjacent
+    """Adds the part number to all the stars to which it is adjacent"""
     for i in range(max(0, line_i - 1), min(line_i + 2, m-1)):
         for j in range(max(0, start - 1), min(end + 1, n-1)):
             try:
@@ -28,7 +28,7 @@ def update_star_nums(num: int, start: int, end: int, line_i: int) -> None:
 
 
 def process_part_numbers(text: str, line_i: int) -> list[int]:
-    # Identifies (and returns) part numbers and stores them to their adjacent stars
+    """Identifies (and returns) part numbers and stores them to their adjacent stars"""
     matches = re.finditer('[0-9]+', text)
     part_ns = []
     for match in matches:
@@ -41,9 +41,10 @@ def process_part_numbers(text: str, line_i: int) -> list[int]:
 
 
 def has_symbol(start: int, end: int, line_i: int) -> bool:
-    # Is there a symbol around characters `start`--`end` on line `line_i`?
-    #   `end` is after the last character, hence `+ 1` (as opposed
-    #   to `+ 2` for lines)
+    """
+    Is there a symbol around characters `start`--`end` on line `line_i`?
+    `end` is after the last character, hence `+ 1` (as opposed to `+ 2` for lines)
+    """
     for i in range(max(0, line_i - 1), min(line_i + 2, m-1)):
         for j in range(max(0, start - 1), min(end + 1, n-1)):
             if is_symbol[i][j]:

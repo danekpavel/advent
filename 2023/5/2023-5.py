@@ -19,12 +19,12 @@ def map_all_levels(source: int) -> int:
 
 
 def read_numbers(text: str) -> list[int]:
-    # Returns all numbers from a string as a list of integers
+    """Returns all numbers from a string as a list of integers"""
     return [int(n) for n in re.findall('[0-9]+', text)]
 
 
 def read_rule(text: str) -> Rule:
-    # Returns source range _start_ and _end_ and the _difference_ to destination range
+    """Returns source range _start_ and _end_ and the _difference_ to destination range"""
     numbers = read_numbers(text)
     return [numbers[1],
             numbers[1] + numbers[2] - 1,
@@ -58,7 +58,7 @@ def apply_rule(input_range: InputRange, rule: Rule) -> tuple[InputRange, list[In
 
 
 def apply_mapping(input_ranges: list[InputRange], mapping: Mapping) -> list[InputRange]:
-    # Changes input ranges to output ranges for one mapping
+    """Changes input ranges to output ranges for one mapping"""
     output_ranges = []
     for rule in mapping:
         remaining_input_ranges = []

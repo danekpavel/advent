@@ -6,7 +6,7 @@ GameType = list[list[int, int, int]]
 
 
 def color_count(text: str, color: str) -> int:
-    # returns count for the specified color
+    """Returns count for the specified color"""
     res = re.search('([0-9]+) ' + color, text)
     if not res:
         return 0
