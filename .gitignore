@@ -5,3 +5,5 @@
 
 # CPP executables
 *.exe
+
+*.code-workspace

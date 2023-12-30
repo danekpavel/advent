@@ -35,14 +35,14 @@ int main() {
         size_t first_pos{0}, last_pos{0};
         bool found{false};
         for (size_t i = 0; i < NUMBERS_CHAR.size(); ++i) {
-            // first digit word
+            // find first digit word
             auto pos = line.find(NUMBERS_CHAR[i]);
             if (pos != std::string::npos && (!found || pos < first_pos)) {
                 found = true;
                 first_i = i;
                 first_pos = pos;
             }
-            // last digit word
+            // find last digit word
             pos = line.rfind(NUMBERS_CHAR[i]);
             if (pos != std::string::npos && pos > last_pos) {
                 last_i = i;
